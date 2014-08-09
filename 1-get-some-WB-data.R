@@ -17,11 +17,15 @@ WBD <- subset(WBD, !is.na(ccode))
 
 meangnipc <- mean(WBD$gnipc, na.rm = TRUE)
 mediangnipc <- median(WBD$gnipc, na.rm = TRUE)
+meangnipc
+mediangnipc
 histogram(WBD$gnipc)
 
 WBD$log.gnipc <- log(WBD$gnipc)
 meanloggnipc <- mean(WBD$log.gnipc, na.rm = TRUE)
 medianloggnipc <- median(WBD$log.gnipc, na.rm = TRUE)
+meanloggnipc
+medianloggnipc
 histogram(WBD$log.gnipc)
 
 histogram(WBD$pec)
@@ -37,4 +41,6 @@ histogram(WBD$log.ur)
 CAWBD <- subset(WBD, ccode >= 701 & ccode <= 705)
 meancmr.ca <- mean(CAWBD$cmr, na.rm = TRUE)
 mediancmr.ca <- median(CAWBD$cmr, na.rm = TRUE)
+meancmr.ca
+mediancmr.ca
 histogram(CAWBD$cmr)
