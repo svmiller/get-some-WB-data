@@ -1,6 +1,6 @@
 library(WDI)
 library(countrycode)
-library(car)
+library(reshape)
 library(lattice)
 
 WBD <- WDI(country="all", indicator=c("NY.GNP.PCAP.CD","EG.USE.PCAP.KG.OE","SL.UEM.TOTL.ZS","SH.DYN.MORT"), start=1950, end=2013)
