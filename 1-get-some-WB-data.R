@@ -3,7 +3,23 @@ library(countrycode)
 library(reshape)
 library(lattice)
 
+## Option 1: use WDI.
+#####################
+# This might be a bit slow.
+
 WBD <- WDI(country="all", indicator=c("NY.GNP.PCAP.CD","EG.USE.PCAP.KG.OE","SL.UEM.TOTL.ZS","SH.DYN.MORT"), start=1950, end=2013)
+
+## Option 2: use RCurl and read from Github.
+############################################
+# This should be faster.
+
+require(RCurl)
+
+data <- getURL("https://raw.githubusercontent.com/svmiller/get-some-WB-data/master/wbd.csv")
+WBD <- read.csv(text = data)
+
+## Now, let's start the script in earnest.
+##########################################
 
 WBD <- rename(WBD, c(NY.GNP.PCAP.CD="gnipc"))
 WBD <- rename(WBD, c(EG.USE.PCAP.KG.OE="pec"))
